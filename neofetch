@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/gearlock/bin/env bash
 # vim: noai:ts=4:sw=4:expandtab
 # shellcheck source=/dev/null
 # shellcheck disable=2009
@@ -37,7 +37,7 @@ shopt -s eval_unsafe_arith &>/dev/null
 
 sys_locale=${LANG:-C}
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
-PATH=$PATH:/usr/xpg4/bin:/usr/sbin:/sbin:/usr/etc:/usr/libexec
+test -e /gearlock && PATH=/gearlock/bin:$PATH || PATH=$PATH:/usr/xpg4/bin:/usr/sbin:/sbin:/usr/etc:/usr/libexec
 reset='\e[0m'
 shopt -s nocasematch
 
